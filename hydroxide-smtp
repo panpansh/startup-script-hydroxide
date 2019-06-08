@@ -40,26 +40,25 @@ stop() {
 status() {
     if [ -f $PIDFILE ]; then
         if kill -0 $(cat "$PIDFILE"); then
-			log_success_msg "is running"
+		log_success_msg "is running"
         else
-			log_failure_msg "is dead, but pidfile exists"
+		log_failure_msg "is dead, but pidfile exists"
         fi
     else
-		log_warning_msg "is not running"
+	log_warning_msg "is not running"
     fi
 }
 
 case "$1" in
     start)
-		log_daemon_msg "Starting the process" "$NAME"
+	log_daemon_msg "Starting the process" "$NAME"
         start
     ;;
     stop)
-		log_daemon_msg "Stopping the process" "$NAME"
+	log_daemon_msg "Stopping the process" "$NAME"
         stop
     ;;
     restart)
-        echo "Restarting $NAME"
         stop
         start
     ;;
