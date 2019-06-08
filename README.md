@@ -7,3 +7,5 @@ chmod +x /etc/init.d/hydroxide-smtp
 update-rc.d hydroxide-smtp defaults (if you want auto start at boot)
 
 Now you can use with : start stop restart status
+
+Log file by default : /var/log/hydroxide
