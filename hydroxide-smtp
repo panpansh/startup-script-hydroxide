@@ -13,7 +13,7 @@
 . /lib/lsb/init-functions
 
 # change your hydroxide bin PATH here
-DAEMON=/root/gowork/bin/hydroxide
+DAEMON=/home/hydroxide/gowork/bin/hydroxide
 
 NAME=hydroxide
 PIDFILE=/var/run/$NAME-smtp.pid
@@ -27,7 +27,7 @@ if [ -z "$DAEMONOPTS" ]; then
 fi
 
 start() {
-    start-stop-daemon --start --quiet --chuid 0:0 --make-pidfile --pidfile $PIDFILE \
+    start-stop-daemon --start --quiet --chuid 1001:1001 --make-pidfile --pidfile $PIDFILE \
         --background --oknodo --startas /bin/bash -- -c "exec $DAEMON $DAEMONOPTS > $LOGFILE 2>&1"
 }
 
