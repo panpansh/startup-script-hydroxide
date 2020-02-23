@@ -9,3 +9,5 @@ update-rc.d hydroxide-smtp defaults (if you want auto start at boot)
 Now you can use with : start stop restart status
 
 Log file by default : /var/log/hydroxide
+
+You are welcome to make changes.
